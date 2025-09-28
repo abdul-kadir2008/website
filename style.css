@@ -2,6 +2,11 @@
     margin: 0;
     padding: 0;
 }
+body{
+    background-image: url('seagull-9176504.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+}
 nav{
     display: flex;
     align-items: center;
@@ -16,4 +21,13 @@ nav a{
     text-decoration: none;
     font-size: 20px;
     color: white;
+}
+#name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: blue;
+    font-size: 50px;
+   
 }
