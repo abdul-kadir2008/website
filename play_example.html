@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Simple Play Button</title>
+  <style>
+    body{font-family: Arial; padding:40px; background:#f5f7fb;}
+    .box{background:white; padding:20px; border-radius:8px; width:320px; box-shadow:0 6px 18px rgba(0,0,0,0.06);}
+    button{padding:10px 16px; border:none; border-radius:6px; cursor:pointer; background:#0b76ff; color:white; font-weight:600;}
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h3>Play example audio</h3>
+
+    <!-- Audio element (no visible controls) -->
+    <audio id="myAudio" src="ElevenLabs_Text_to_Speech_audio.mp3"></audio>
+
+    <!-- Play / Pause button -->
+    <button id="playBtn">Play</button>
+  </div>
+
+  <script>
+    const audio = document.getElementById('myAudio');
+    const btn = document.getElementById('playBtn');
+
+    btn.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+        btn.textContent = 'Pause';
+      } else {
+        audio.pause();
+        btn.textContent = 'Play';
+      }
+    });
+
+    // When audio ends, reset button text
+    audio.addEventListener('ended', () => {
+      btn.textContent = 'Play';
+      audio.currentTime = 0;
+    });
+  </script>
+  <button><a href="elevenlab.html">Back<-</a></button>
+</body>
+</html>
